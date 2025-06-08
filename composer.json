@@ -1,0 +1,17 @@
+{
+    "name": "matsuokataiki/001_todo",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matsuoka0711",
+            "email": "taiki1544.0711@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^12.8"
+    }
+}

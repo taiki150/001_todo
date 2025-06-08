@@ -1,0 +1,153 @@
+body {
+  /* background-color: #eee; */
+  font-family: "Noto Sans JP";
+  width: 100%;
+}
+
+.main {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.todo_list {
+  flex-shrink: 0;
+  width: calc((100% - 20px * 3) / 3);
+  margin: 20px 10px;
+  border-top: 10px solid #3A9DBD;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #F9F7F5;
+  height: calc(90vh - 40px);
+  overflow: hidden; 
+  transition: 0.5s;
+}
+
+.button {
+  position: absolute;
+  width: 100%;
+  height: calc(10vh - 10px);
+  /* background-color: red; */
+  top: 90vh;
+  overflow: auto;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button div {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button div p {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #EEE;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#next:active, #prev:active {
+  background-color: #333;
+}
+
+#page div {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #333;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#prev {
+  left: 1.5%;
+  background-color: gray;
+}
+
+#next {
+  right: 1.5%;
+}
+
+.todo_list h2 {
+  font-size: 24px;
+  letter-spacing: 3px;
+  margin: 20px 0;
+}
+
+.add_list {
+  width: 95%;
+  margin: 20px auto;
+  background-color: #FFF;
+  line-height: 3;
+  border-radius: 10px;
+}
+
+#add_list {
+  display: block;
+  color: #0968CD;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s;
+}
+
+#add_list:hover {
+  background-color: #EEE;
+  border-radius: 10px;
+}
+
+.todo_contents {
+  width: 100%;
+  overflow: scroll;
+  height: 700px;
+}
+
+.todo_box {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 20px;
+  background-color: #FFF;
+  border-radius: 10px;  
+  box-sizing: border-box;
+}
+
+.todo_box a {
+  text-decoration: none;
+  padding: 20px;
+  display: block;
+  border-radius: 10px;
+  transition: 0.2s;
+  box-shadow: 3px 3px 3px #ddd;
+}
+
+.todo_box a:hover {
+  background-color: #EEE;
+}
+
+.todo_box p, .todo_box h3 {
+  line-height: 2;
+} 
+
+.task_title {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.task_date {
+  color: #999;
+}
+
+.task_date span {
+  color: #333;
+}

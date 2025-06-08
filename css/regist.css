@@ -1,0 +1,120 @@
+/* #3A9DBD */
+
+.main {
+  width: 540px;
+  margin: auto;
+}
+
+.regist_main {
+  width: 540px;
+}
+
+.main {
+  width: 540px;
+  margin: auto;
+}
+
+.regist_main {
+  width: 540px;
+  margin: 20px auto;
+  border-top: 10px solid #3A9DBD;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #F9F7F5;
+  height: calc(100vh - 40px);
+}
+
+.regist_main h2 {
+  font-size: 24px;
+  letter-spacing: 3px;
+  margin: 20px 0;
+}
+
+.list {
+  width: 95%;
+  margin: 20px auto;
+  background-color: #FFF;
+  line-height: 3;
+  border-radius: 10px;
+}
+
+.list a {
+  display: block;
+  color: #0968CD;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.list a:hover {
+  background-color: #EEE;
+  border-radius: 10px;
+}
+
+form {
+  margin-top: 50px;
+}
+
+.regist_form {
+  width: 95%;
+  margin: 30px auto;
+  line-height: 2;
+  display: flex;
+  align-items: center;
+}
+
+.regist_form label {
+  width: 30%;
+  margin-right: 5%;
+}
+
+.regist_form input {
+  width: 65%;
+  display: block;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #3A9DBD;
+}
+
+.regist_form select {
+  width: 65%;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #3A9DBD;
+}
+
+form button {
+  display: block;
+  width: 30%;
+  padding: 10px;
+  margin: auto;
+  background-color: #FFF;
+  border: 1px solid #3A9DBD;
+  color: #3A9DBD;
+  transition: 0.2s;
+
+  background-color: #DDD;
+  pointer-events: none;
+}
+
+form button:hover {
+  background-color: #3A9DBD;
+  color: #FFF;
+}
+
+form button:active {
+  background-color: #FFF;
+  color: #3A9DBD;
+}
+
+.activeBtn {
+  background-color: #FFF;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.noActiveInput {
+pointer-events: none;
+background-color: #DDD;
+}
