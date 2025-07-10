@@ -1,12 +1,10 @@
-/* #3A9DBD */
-
 .main {
   width: 540px;
   margin: auto;
   height: 80vh;
 }
 
-.regist_main {
+.create_main {
   width: 540px;
   margin: 20px auto;
   height: 80vh;
@@ -17,7 +15,7 @@
   background-color: #F9F7F5;
 }
 
-.regist_main h2 {
+.create_main h2 {
   font-size: 24px;
   letter-spacing: 3px;
   margin: 20px 0;
@@ -44,52 +42,52 @@
   border-radius: 10px;
 }
 
-form {
-  margin-top: 50px;
+.border {
+  border: 1px solid #DDD;
+  border-radius: 10px;
+  margin: 10px;
 }
 
-.regist_form {
-  width: 95%;
-  margin: 30px auto;
-  line-height: 2;
+.create_form {
+  width: 100%;
+  padding: 10px 0;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
-.regist_form label {
-  width: 30%;
-  margin-right: 5%;
+.create_form label {
+  width: 45%;
+  margin: auto;
 }
 
-.regist_form input {
-  width: 65%;
+.create_form select {
+  width: 45%;
+  margin: auto;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #3A9DBD;
+}
+
+.create_form input {
+  width: 45%;
+  margin: auto;
   display: block;
   padding: 5px;
   font-size: 15px;
   border: 1px solid #3A9DBD;
+  box-sizing: border-box;
 }
 
-.regist_form select {
-  width: 65%;
+.create_form textarea {
+  width: 45%;
+  line-height: 2;
+  height: 100px;
+  margin: auto;
+  display: block;
   padding: 5px;
   font-size: 15px;
   border: 1px solid #3A9DBD;
-}
-
-.regist_form:first-child {
-  position: relative;
-}
-
-.regist_form:first-child input {
-  display: flex;
-  justify-content: left;
-}
-
-.base {
-  font-size: 12px;
-  position: absolute;
-  right: 50%;
-  transform: translateX(50%);
+  box-sizing: border-box;
 }
 
 form button {
@@ -105,49 +103,16 @@ form button {
   pointer-events: none;
 }
 
-#deleteBtn {
-  border: 1px solid #fa3c3c;
-  color: #fa3c3c;
-}
-
-form button:hover {
-  background-color: #3A9DBD;
-  color: #FFF;
-}
-
-#deleteBtn:hover {
-  background-color: #fa3c3c;
-  color: #FFF;
-}
-
-form button:active {
-  background-color: #FFF;
-  color: #3A9DBD;
-}
-
 .activeBtn {
   background-color: #FFF;
   pointer-events: auto;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-#msg_box {
-  margin-top: 30px;
-  text-align: center;
-  background-color: #EEE;
-  padding: 30px 0;
-  border: 1px solid #666;
-  border-radius: 20px;
-}
-
-#msg_box p {
-  font-size: 14px;
-}
-
-#msg_box p span {
-  display: block;
-  font-size: 12px;
-  margin-top: 10px;
+.activeBtn:hover {
+  background-color: #3A9DBD;
+  color: #FFF;
 }
 
 #msg_box.fadeout {

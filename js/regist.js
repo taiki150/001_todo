@@ -1,38 +1,43 @@
 'use strict';
 
 {
-  const switchBtn = document.getElementById('switch');
   const afterInput = document.getElementById('afterInput');
-  const beforeInput = document.getElementById('beforeInput');
-  const afterLabel = document.getElementById('afterLabel');
-  const beforeLabel = document.getElementById('beforeLabel');
   const addBtn = document.getElementById('addBtn');
-  const options = beforeInput.options;
-  
-  switchBtn.addEventListener('change', function(){
-    if(switchBtn.checked){
-      beforeInput.classList.add('noActiveInput');
-      afterInput.classList.remove('noActiveInput');
-      beforeLabel.textContent = "";
-      afterLabel.textContent = "カテゴリー登録";
-    }else{
-      beforeInput.classList.remove('noActiveInput');
-      afterInput.classList.add('noActiveInput');
-      beforeLabel.textContent = "①変更前";
-      afterLabel.textContent = "②変更後";
-    }
-    options.velue = options[0];
-  });
+  const deleteBtn = document.getElementById('deleteBtn');
+  const beforeInput = document.getElementById('beforeInput');
 
-  beforeInput.addEventListener('change', function() {
-    const selectedIndex = beforeInput.selectedIndex;
-    if(selectedIndex !== 0){
-      afterInput.classList.remove('noActiveInput');
-    }else{
-      afterInput.classList.add('noActiveInput');
-    }
-  });
 
+  const category_name = document.getElementById('category_name');
+  const start_time = document.getElementById('start_time');
+  const end_time = document.getElementById('end_time');
+  const name = document.getElementById('name');
+
+  if(category_name || start_time || end_time || name){
+  category_name.addEventListener('change', function() {
+    createTaskValidation();
+  });
+  start_time.addEventListener('input', function() {
+    createTaskValidation();
+  });
+  end_time.addEventListener('input', function() {
+    createTaskValidation();
+  });
+  name.addEventListener('input', function() {
+    createTaskValidation();
+  });
+  }
+  const msg = document.getElementById('msg_box');
+  // 登録後メッセージを5秒後に非表示
+  if (msg) {
+    setTimeout( function() {
+      msg.classList.add('fadeout');
+      // msg.style.display = "none";
+      history.replaceState(null, null, location.pathname);
+    }, 5000); 
+  }
+
+
+    // input2の入力後の発動イベント
   afterInput.addEventListener('input', function() {
     if(afterInput.value !== ''){
       addBtn.classList.add('activeBtn');
@@ -40,4 +45,35 @@
       addBtn.classList.remove('activeBtn');
     }
   });
+
+  beforeInput.addEventListener('change', function() {
+    if(beforeInput.selectedIndex !== 0){
+      deleteBtn.classList.add('activeBtn');
+    }else{
+      deleteBtn.classList.remove('activeBtn');
+    }
+  });
+
+
+  if(category_name){
+    const option = category_name.options[category_name.selectedIndex].text;
+  }
+
+  function createTaskValidation() {
+  const category_name = document.getElementById('category_name');
+  const option = category_name.options[category_name.selectedIndex].text;
+
+  const start_time_value = document.getElementById('start_time').value;
+  const end_time_value = document.getElementById('end_time').value;
+  const name_value = document.getElementById('name').value;
+  const create_btn = document.getElementById('create_btn');
+
+  if(option !== '選択してください' && start_time_value !== "" && end_time_value !== "" && name_value !== "" && start_time.value < end_time.value){
+    create_btn.classList.add('activeBtn');
+  } else {
+    create_btn.classList.remove('activeBtn');
+  }
+}
+
+
 }

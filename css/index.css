@@ -4,35 +4,46 @@ body {
   width: 100%;
 }
 
+.container {
+  width: 100%;
+}
+
 .main {
-  width: 90%;
+  width: 100%;
   height: 100%;
-  margin: auto;
+  padding: 0 5%;
+  box-sizing: border-box;
   display: flex;
   overflow: hidden;
-  position: relative;
+  height: 80vh;
 }
 
 .todo_list {
   flex-shrink: 0;
   width: calc((100% - 20px * 3) / 3);
-  margin: 20px 10px;
+  margin: 0 10px;
   border-top: 10px solid #3A9DBD;
   border-radius: 10px;
   padding: 15px;
   box-sizing: border-box;
   background-color: #F9F7F5;
-  height: calc(90vh - 40px);
-  overflow: hidden; 
+  height: 100%;
+
+  transition: 0.5s;
+
+  display: flex;
+  flex-direction: column; 
+}
+
+.task_add_btn {
+  position: relative;
+  width: 100px;
   transition: 0.5s;
 }
 
 .button {
-  position: absolute;
   width: 100%;
-  height: calc(10vh - 10px);
-  /* background-color: red; */
-  top: 90vh;
+  height: 10vh;
   overflow: auto;
   user-select: none;
   display: flex;
@@ -109,8 +120,12 @@ body {
 
 .todo_contents {
   width: 100%;
-  overflow: scroll;
   height: 700px;
+  overflow: auto;
+
+  /* flex: 1 1 auto;  */
+  overflow-y: auto; 
+  /* min-height: 0; */
 }
 
 .todo_box {
@@ -150,4 +165,201 @@ body {
 
 .task_date span {
   color: #333;
+}
+
+.task_status {
+  width: 50px;
+  padding: 0 5px;
+  border-radius: 5px;
+  color: #333;
+  font-size: 12px;
+  text-align: center;
+}
+
+.task_status_1 {
+  background-color: #ff7777;
+}
+.task_status_2 {
+  background-color: #85aaff;
+}
+.task_status_3 {
+  background-color: #ffda7b;
+}
+
+#task_add_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+#task_add_btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #0968CD;
+  border-radius: 20px;
+    cursor: pointer;
+}
+
+.plus_btn {
+  display: inline-block;
+  vertical-align: middle;
+  color: #0968CD;
+  width: 1em;
+  height: 0.2em;
+  background: currentColor;
+  border-radius: 0.1em;
+
+  position: relative;
+}
+.plus_btn::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  transform: rotate(90deg);
+}
+
+#task_add_btn:hover .plus_btn{
+  background-color: #0968CD;
+  color: #FFF;
+}
+
+.message {
+  text-align: center;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.message h3 {
+  font-size: 18px;
+  color: #333;
+  line-height: 3;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #F9F7F5;
+  padding: 30px;
+}
+
+
+
+/* ここからcreate_category */
+
+.create_category {
+  width: 540px;
+  background-color: #F9F7F5;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 10px;
+  
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: none;
+}
+
+.create_category h3 {
+  margin: 20px;
+  font-size: 18px;
+  position: relative;
+}
+
+.square_btn {
+  display: block;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #333;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+ 
+.square_btn::before, .square_btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background: #333;
+}
+ 
+.square_btn::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+ 
+.square_btn::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.square_btn:hover {
+  background: #3A9DBD;
+}
+
+.create_category_box {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.create_category_box p{
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #ccc;
+  margin-right: 20px;
+}
+
+.create_category_box input {
+  width: 200px;
+  line-height: 2;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.createBtn {
+  display: block;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+  border: 1px solid #3A9DBD;
+  color: #3A9DBD;
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: #FFF;
+}
+
+.createBtn:hover {
+  color: #FFF;
+  background-color: #3A9DBD;
+}
+
+
+/* jsで追加するスタイル */
+.dimmed {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.7;
+  transition: background-color 0.3s;
+  pointer-events: none;
+}
+.active_box {
+  display: block;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

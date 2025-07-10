@@ -4,21 +4,21 @@
 
   require_once __DIR__ . '/vendor/autoload.php';
 
-  function db_conn() {
-      $db = new Manager;
-      $db->addConnection([
-          'driver'    => 'mysql',
-          'host'      => 'localhost',
-          'database'  => '001_todo',
-          'username'  => 'root',
-          'password'  => 'root',
-          'charset'   => 'utf8',
-          'collation' => 'utf8_general_ci',
-          'prefix'    => '',
-      ]);
-      $db->setAsGlobal();
-      $db->bootEloquent();
-  }
+function db_conn() {
+    $db = new Manager;
+    $db->addConnection([
+        'driver'    => 'mysql',
+        'host'      => 'mysql324.phy.lolipop.lan', // ロリポップのホスト
+        'database'  => 'LAA1644563-001todo',       // あなたのDB名
+        'username'  => 'LAA1644563',               // あなたのユーザー名
+        'password'  => 'Taiki1544', // ※要記入
+        'charset'   => 'utf8mb4',
+        'collation' => 'utf8mb4_general_ci',
+        'prefix'    => '',
+    ]);
+    $db->setAsGlobal();
+    $db->bootEloquent();
+}
 
   /*
   $host = 'localhost';

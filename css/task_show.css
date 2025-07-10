@@ -1,11 +1,15 @@
 body {
   /* background-color: #eee; */
   font-family: "Noto Sans JP";
+  z-index: 1;
 }
 
 .main {
   width: 540px;
   margin: auto;
+  height: 80vh;
+
+  position: relative;
 }
 
 .todo_list {
@@ -16,7 +20,7 @@ body {
   padding: 15px;
   box-sizing: border-box;
   background-color: #F9F7F5;
-  height: calc(100vh - 40px);
+  height: 80vh;
 }
 
 .todo_list h2 {
@@ -53,33 +57,307 @@ body {
   border-radius: 10px;
 }
 
-.task_calendar {
-  width: 100%;
-  /* background-color: #DDD; */
-  padding: 30px;
-  box-sizing: border-box;
-  border-bottom: 1px solid #aaa;
+.show_box {
+  margin-top: 50px;
 }
 
-.calendarBox {
+.color_1 {
+  background-color: #ff7777;
+}
+.color_2 {
+  background-color: #85aaff;
+}
+.color_3 {
+  background-color: #ffda7b;
+}
+
+.time {
+  width: 90%;
+  margin: auto;
+  height: 70px;
+  border: 1px solid #bbb;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.time_box {
+  width: calc(100% / 24);
+  height: 100%;
+  background-color: #eee;
+  box-sizing: border-box;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.time_box a {
+  display: flex;
   width: 100%;
-  height: 50px;
-  background-color: yellow;
-  margin-bottom: 5px;
+  height: 100%;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.border {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.time_box_bg_1 {
+  background-color: #ff7777;
+}
+.time_box_bg_2 {
+  background-color: #85aaff;
+}
+.time_box_bg_3 {
+  background-color: #ffda7b;
+}
+
+.description_box {
+  width: 90%;
+  margin: auto;
+}
+
+.description_box dl {
+  display: flex;
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 200px;
+  color: #333;
+}
+
+.description_box dd {
+  width: 15%;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.description_box dt {
+  width: 85%;
+  padding: 10px;
+  overflow: auto;
+}
+
+.period_box {
+  width: 90%;
+  margin: auto;
+}
+
+.period_box dl , .status_box dl {
   display: flex;
 }
 
-.calendar_1day_box {
-  width: calc(100% / 24);
-  
-  height: 50px;
-  background-color: #eee;
-  border: 0.5px solid #777;
+.period_box dd , .status_box dd {
+  width: 15%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.period_box dt , .status_box dt{
+  width: 85%;
+  padding: 10px;
+}
+
+dt p {
+  padding: 10px;
+  display: inline-block;
+  color: #333;
+  border-radius: 5px;
+}
+
+.status_color_1 {
+  background-color: #ff7777;
+}
+.status_color_2 {
+  background-color: #85aaff;
+}
+.status_color_3 {
+  background-color: #ffda7b;
+}
+
+.status_box {
+  width: 90%;
+  margin: auto;
+}
+
+
+/* ここから<section> time_edit */
+
+#edit {
+  width: 540px;
+  margin: auto;
+}
+
+.edit_box_1, .edit_box_2 {
+  width: 450px;
+  margin: auto;
+  padding:15px;
+  background: #F9F7F5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 2px solid #888;
+
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: none;
+}
+
+.edit_box_1 h3 ,  .edit_box_2 h3 {
+  margin: 20px;
+  font-size: 18px;
+  position: relative;
+}
+
+.square_btn {
+  display: block;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #333;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+ 
+.square_btn::before, .square_btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background: #333;
+}
+ 
+.square_btn::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+ 
+.square_btn::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.square_btn:hover {
+  background: #3A9DBD;
+}
+
+
+.status_edit_box_1 {
+  display: flex;
+  margin: 20px 0;
+}
+
+.status_edit_box_1 p{
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #ccc;
+  margin-right: 20px;
+}
+
+.status_edit_box_1 select {
+  width: 80px;
+  padding: 10px;
+  color: #333;
   box-sizing: border-box;
 }
 
-.situation_box {
-  
-  background-color: #f54f4fb9;
-  height: 100%;
+.name_edit_box {
+  display: flex;
+  margin: 20px 0;
+}
+
+.name_edit_box input {
+  width: 200px;
+  line-height: 2;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.time_edit_box_1, .description_edit_box {
+  display: flex;
+  margin: 20px 0;
+}
+
+.time_edit_box_1 p , .name_edit_box p , .description_edit_box p {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #ccc;
+  margin-right: 20px;
+}
+
+.time_edit_box_1 input {
+  width: 80px;
+  line-height: 2;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.time_edit_box_1 span {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.description_edit_box textarea {
+  width: 200px;
+  height: 100px;
+}
+
+.createBtn {
+  display: block;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+  border: 1px solid #3A9DBD;
+  color: #3A9DBD;
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: #FFF;
+}
+
+.createBtn:hover {
+  color: #FFF;
+  background-color: #3A9DBD;
+}
+
+/* jsで追加するスタイル */
+.dimmed {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  pointer-events: none;
+
+}
+.active_box {
+  display: block;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.no_active_btn {
+  background-color: #CCC;
+  pointer-events: none;
+}
+
+#msg_box.fadeout {
+  opacity: 0;
+  transition: opacity 1s ease-out;
 }

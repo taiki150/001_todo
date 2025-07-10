@@ -2,7 +2,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-  use App\Models\Category;
+use App\Models\Category;
+use App\Models\Status;
 
 class Task extends Model
 {
@@ -10,6 +11,10 @@ class Task extends Model
 
     public function category() {
         return $this->belongsTo(Category::class);
+    }
+
+    public function status() {
+        return $this->belongsTo(Status::class);
     }
 }
 

@@ -1,0 +1,40 @@
+
+.header {
+  width: 90%;
+  margin: auto;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_box {
+  
+}
+.header_box ul {
+  display: flex;
+  justify-content: center;
+}
+
+.header_box ul li {
+  width: 200px;
+  margin: 0 20px;
+  text-align: center;
+  list-style: none;
+  line-height: 3;
+}
+
+.header_box ul li a {
+  border-radius: 30px;
+  background-color: #3A9DBD;
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.1s;
+  font-size: 14px;
+}
+
+.header_box ul li a:hover {
+  background-color: #3a9cbd7b;
+}
