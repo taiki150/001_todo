@@ -50,12 +50,12 @@
           <button class="" id="deleteBtn" type="submit">削除する</button>
           <script>
             document.getElementById('deleteBtn').addEventListener('click', function(e){
-              e.preventDefault(); // ← クリックによる通常の送信を防止
+              e.preventDefault();
               const confirmed = confirm('本当にこのカテゴリを削除してもよろしいですか？');
               if(confirmed){
-                const form = this.closest('form'); // 一番近い form を取得
+                const form = this.closest('form');
                 document.getElementById('actionType').value = 'category_delete';
-                form.submit(); // 修正：ここで正しく submit 実行
+                form.submit();
               }
             });
           </script>

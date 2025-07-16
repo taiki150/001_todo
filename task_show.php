@@ -98,7 +98,24 @@
             </div>
             <?php } ?>
           </div>
-          <button class="createBtn" id="main_edit_btn">編集</button>
+          <div class="edit_btn_box">
+            <button class="createBtn" id="main_edit_btn">編集</button>
+            <form action="actions/create.php" method="post">
+              <input type="hidden" name="action_type" value="task_delete">
+              <input type="hidden" name="task_id" value="<?php echo $task->id; ?>">
+              <button class="deleteBtn" id="task_delete_btn">削除</button>
+            </form>
+            <script>
+              document.getElementById('task_delete_btn').addEventListener('click', function(e){
+                e.preventDefault();
+                const confirmed = confirm('本当にこのカテゴリを削除してもよろしいですか？');
+                if(confirmed){
+                  const form = this.closest('form');
+                  form.submit();
+                }
+              });
+            </script>
+          </div>
         </div>
       </div>
     </section>

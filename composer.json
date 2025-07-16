@@ -2,7 +2,7 @@
     "name": "matsuokataiki/001_todo",
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "App/"
         }
     },
     "authors": [

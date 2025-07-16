@@ -24,6 +24,8 @@
       sub_task_edit();
     }elseif($action === 'main_task_edit'){
       main_task_edit();
+    }elseif($action === 'task_delete'){
+      task_delete();
     }
 
     // カテゴリー登録の処理
@@ -81,6 +83,7 @@
       exit;
     }
 
+    // カテゴリー削除
     function category_delete() {
       $id = $_POST['category_id'] ?? null;
       if( empty($id) ){
@@ -211,4 +214,27 @@
 
       header("Location: ../task_show.php?id={$task_id}");
         exit;
+    }
+
+    // タスク削除
+    function task_delete() {
+      $id = $_POST['task_id'] ?? null;
+      if( empty($id) ){
+        header("Location: ../task_show.php?id={$id}");
+        exit;
+      }
+      try {
+        DB::beginTransaction();
+
+        $task = Task::find($id);
+        $task->delete();
+
+        DB::commit();
+      } catch (\Exception $e) {
+        header("Location: ../task_show.php?id={$id}");
+        exit;
+      }
+
+      header("Location: ../index.php");
+      exit;
     }
